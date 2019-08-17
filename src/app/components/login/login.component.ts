@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  public dataMail: string;
+  public dataKey: string;
+
   constructor() { }
 
   ngOnInit() {

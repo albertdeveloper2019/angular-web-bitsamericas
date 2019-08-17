@@ -1,12 +1,16 @@
 <div class="container">
         <h4 class="Margin-h4"> Autenticación </h4>
-        <form class="Margin-form">
+        <form  #formulario="ngForm" class="Margin-form">
 
                   <div class="form-group row">
                           <div class="col-8">
                             <input class="form-control Margin-input"
-                                   type="text"
-                                   placeholder="User">
+                                   type="email"
+                                   name="email"
+                                   pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                                   [(ngModel)]="dataMail"
+                                   required
+                                   placeholder="Email">
                           </div>
                     </div>
 
@@ -14,6 +18,9 @@
                           <div class="col-8">
                             <input class="form-control Margin-input"
                                    type="password"
+                                   name="password"
+                                   [(ngModel)]="dataKey"
+                                   required
                                    placeholder="Password">
                           </div>
                     </div>
@@ -21,10 +28,11 @@
               <div class="form-group row">
                 <label class="col-2 col-form-label">&nbsp;</label>
                   <div class="input-group col-md-8">
-                        <button type="submit" class="btn btn-outline-primary bottom-login">
+                        <button type="submit" class="btn btn-outline-primary bottom-login"
+                                [disabled]="formulario.invalid">
                           Login
                         </button>
-                        <button type="submit" class="btn btn-outline-primary">
+                        <button type="submit" class="btn btn-outline-primary bottom-cancel">
                           Cancel
                         </button>
                   </div>
