@@ -28,11 +28,11 @@
               <div class="form-group row">
                 <label class="col-2 col-form-label">&nbsp;</label>
                   <div class="input-group col-md-8">
-                        <button type="submit" class="btn btn-outline-primary bottom-login"
+                        <button type="submit" class="btn btn-primary bottom-login" (click)="Loging()"
                                 [disabled]="formulario.invalid">
                           Login
                         </button>
-                        <button type="submit" class="btn btn-outline-primary bottom-cancel">
+                        <button type="submit" class="btn btn-primary bottom-cancel" (click)="canceling(); formulario.reset()">
                           Cancel
                         </button>
                   </div>
