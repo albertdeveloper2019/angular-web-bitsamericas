@@ -29,8 +29,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 =======
 # angular-web-bitsamericas
 Aplicación web Bits Americas
+<<<<<<< HEAD
 
 ## Instalación de la aplicación
 
 npm install
 >>>>>>> b93080e1113bdb18227bc07f70ff1a856ac17df8
+=======
+>>>>>>> 353f07de5e8ffb85f6eb2d1b0cc3bd4d29e76d97
