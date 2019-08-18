@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
           password: this.dataKey
         };
        // this.mostrar = true;
+        console.log("postdata: ", this.postData);
         this.servicesUser.Autentication(this.postData).subscribe(
           (data: any) => {
            // this.storage.set('token', data.token);
@@ -35,20 +36,18 @@ export class LoginComponent implements OnInit {
             console.log(data);
 
             if (data.usuario.rol === 'USER_ROLE') {
-               this.ToastrService.success('Bienvenido: ', data.usuario.nombre);
-             // toastr.success('Success messages');
+               this.ToastrService.success(data.usuario.nombre,'Bienvenido: ');
                this.router.navigateByUrl('/Dashboard');
             }
             if (data.usuario.rol === 'ADMIN_ROLE') {
-             //  this.toastr.success('Bienvenido: ', data.usuario.nombre);
+               this.ToastrService.success(data.usuario.nombre,'Bienvenido: ');
                this.router.navigateByUrl('/Dashboard');
-               console.log('Dashboard');
             }
           },
           error => {
             //this.mostrar = false;
             console.log(error.error.mensaje);
-           // this.messagesService.presentToast(error.error.mensaje, 'danger');
+            this.ToastrService.error(error.error.mensaje,'Error: ');
           }
         );
    
@@ -57,5 +56,9 @@ export class LoginComponent implements OnInit {
   canceling(){
      console.log("Cancelando login");
   }// canceling
+
+  Register(){
+     this.router.navigateByUrl('/register');
+  }//Register
 
 }

@@ -1,3 +1,39 @@
-<p>
-  register works!
-</p>
+<div class="container">
+    <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons"></i></a>
+    <h4 class="Margin-h4"> Registro de Usuario </h4>
+    <form  #formularioRegistro="ngForm" class="Margin-form">
+
+              <div class="form-group row">
+                      <div class="col-8">
+                        <input class="form-control Margin-input"
+                               type="email"
+                               name="email"
+                               pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                               [(ngModel)]="dataMail"
+                               required
+                               placeholder="Email">
+                      </div>
+                </div>
+
+                <div class="form-group row">
+                      <div class="col-8">
+                        <input class="form-control Margin-input"
+                               type="password"
+                               name="password"
+                               [(ngModel)]="dataKey"
+                               required
+                               placeholder="Password">
+                      </div>
+                </div>
+
+          <div class="form-group row">
+              <div class="col-md-8">
+                    <button type="submit" class="btn btn-primary bottom-login" (click)="registering()"
+                            [disabled]="formularioRegistro.invalid">
+                      Registrar
+                    </button>
+              </div>
+          </div>
+    
+    </form>
+</div>

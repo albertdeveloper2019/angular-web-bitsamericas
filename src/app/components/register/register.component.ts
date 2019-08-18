@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../services/user.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -7,9 +9,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  public dataMail: string;
+  public dataKey: string;
 
-  ngOnInit() {
+  public user = {
+    nombre: '',
+    telefono: 'tel prueba',
+    img: '',
+    email: '',
+    password: '',
+    rol: 'USER_ROLE',
+    check: true,
   }
 
-}
+    constructor(private servicesUser: UserService, private ToastrService: ToastrService) { }
+
+    ngOnInit() {
+    }
+
+    async registering(){
+        // this.mostrar = true;
+          this.user.email = this.dataMail;
+          this.user.nombre = this.dataMail;
+          this.user.password = this.dataKey;
+          console.log('user insertar: ', this.user);
+
+          this.servicesUser.Register(this.user).subscribe(async (data: any) => {
+          console.log("data response: ",data);
+          this.ToastrService.success(data.mensaje,'Satisfactorio');
+          
+          }, error => {
+          // this.mostrar = false;
+            this.ToastrService.error(error.error.mensaje,'Error: ');
+
+          });
+
+    }// registering
+  
+}// RegisterComponent

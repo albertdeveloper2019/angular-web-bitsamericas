@@ -19,4 +19,9 @@ export class UserService {
     return this.http.post(this.url + '/login', postData, this.HttpOptions);
   }
 
+  Register(postData: any) {
+    return this.http.post(this.url + '/usuario', postData, this.HttpOptions);
+  }
+
+
 }
