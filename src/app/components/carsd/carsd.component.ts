@@ -27,6 +27,6 @@ export class CarsdComponent implements OnInit {
 
     this.router.navigate([ '/artist', artistaId  ]);
 
-  }
+  } //  verArtista
 
 }

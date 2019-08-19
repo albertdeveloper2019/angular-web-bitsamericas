@@ -14,7 +14,10 @@ export class LoginComponent implements OnInit {
   public dataKey: string;
   public postData: any;
 
-  constructor(private servicesUser: UserService, private router: Router, private ToastrService: ToastrService) { }
+  constructor(private servicesUser: UserService, 
+              private router: Router, 
+              private ToastrService: ToastrService, 
+              ) { }
 
   ngOnInit() {
   }
@@ -24,29 +27,30 @@ export class LoginComponent implements OnInit {
           email: this.dataMail,
           password: this.dataKey
         };
-       // this.mostrar = true;
+       
         console.log("postdata: ", this.postData);
         this.servicesUser.Autentication(this.postData).subscribe(
           (data: any) => {
 
             console.log(data);
+            localStorage.setItem("usuario",data.usuario.email );
+
 
             if (data.usuario.rol === 'USER_ROLE') {
-               this.ToastrService.success(data.usuario.nombre,'Bienvenido: ');
+               this.ToastrService.success(data.usuario.email,'Bienvenido: ');
                this.router.navigateByUrl('/Dashboard');
             }
             if (data.usuario.rol === 'ADMIN_ROLE') {
-               this.ToastrService.success(data.usuario.nombre,'Bienvenido: ');
+               this.ToastrService.success(data.usuario.email,'Bienvenido: ');
                this.router.navigateByUrl('/Dashboard');
             }
           },
           error => {
-            //this.mostrar = false;
             console.log(error.error.mensaje);
             this.ToastrService.error(error.error.mensaje,'Error: ');
           }
         );
-        
+
   }// Loging
 
   canceling(){

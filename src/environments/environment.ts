@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   URL: 'https://vast-escarpment-89994.herokuapp.com',
   spotifyToken: 'https://accounts.spotify.com/api/token',
-  beaberAccessToken: 'Bearer BQDPjWTSpNWLRib58Usy_iuTRxJ6UZxhpLN1Wpy54248JmbgRBZrxT3m6sMqskTGvycddNdNfJrG57TklWQ'
+  beaberAccessToken: 'Bearer BQDapxU9kjpARhKv7WjGH-G6jMCOClK5kQ8ySOzzRPF07oojQXtt7zNtZowHe59l3KBP1UjHZf_CyHEgs58'
   
 };
 

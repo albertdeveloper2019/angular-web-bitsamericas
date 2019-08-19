@@ -14,6 +14,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ToastrModule } from 'ngx-toastr';
 import { CarsdComponent } from './components/carsd/carsd.component';
 import { ManageImagePipe } from './pipes/manage-image.pipe';
+import { NavbarComponent } from './components/navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { ManageImagePipe } from './pipes/manage-image.pipe';
     ErrorPageComponent,
     DashboardComponent,
     CarsdComponent,
-    ManageImagePipe
+    ManageImagePipe,
+    NavbarComponent
     
   ],
   imports: [

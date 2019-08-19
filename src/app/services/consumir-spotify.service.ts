@@ -9,14 +9,10 @@ import { map } from 'rxjs/operators';
 export class ConsumirSpotifyService {
 
   public HttpOptions = {
-   //  headers: new HttpHeaders({ 'Content-Type': 'application/json','Access-Control-Allow-Origin':'*','Access-Control-Allow-Methods':'GET,POST,PATCH,PUT,DELETE,OPTIONS' }),
-   // headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded','Access-Control-Allow-Origin':'*','Access-Control-Allow-Methods':'GET,POST,PATCH,PUT,DELETE,OPTIONS' }),
-     //  headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded', }),
-     headers: new HttpHeaders({ 'Content-Type': 'application/json','Authorization':'my-auth-token' ,})};
+  
+     headers: new HttpHeaders({ 'Content-Type': 'application/json','Authorization':'my-auth-token' ,})
 
-  // public headers = new HttpHeaders({
-  //   'Authorization': 'Bearer BQDsnU8IhPdDKrUXuWq7FVMlrNmZrmMJiSyG6fRESINYgAJBBpnLiQ6GThLMuQsxqlLJVavErt4qQAgzvrA'
-  // });
+  };
 
   public url = environment.spotifyToken;
 
@@ -40,7 +36,6 @@ export class ConsumirSpotifyService {
 
   }
 
-
   getNewReleases() {
 
     return this.getQuery('browse/new-releases?limit=40')
@@ -50,7 +45,7 @@ export class ConsumirSpotifyService {
 
   getArtistas( termino: string ) {
 
-    return this.getQuery(`search?q=${ termino }&type=artist&limit=15`)
+    return this.getQuery(`search?q=${ termino }&type=artist&limit=40`)
                 .pipe( map( data => data['artists'].items));
 
   }
@@ -58,7 +53,6 @@ export class ConsumirSpotifyService {
   getArtista( id: string ) {
 
     return this.getQuery(`artists/${ id }`);
-                // .pipe( map( data => data['artists'].items));
 
   }
 
@@ -68,7 +62,5 @@ export class ConsumirSpotifyService {
                 .pipe( map( data => data['tracks']));
 
   }
-
-
 
 }// ConsumirSpotifyService

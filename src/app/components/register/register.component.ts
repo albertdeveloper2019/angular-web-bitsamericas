@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
     }
 
     async registering(){
-        // this.mostrar = true;
+      
           this.user.email = this.dataMail;
           this.user.nombre = this.dataMail;
           this.user.password = this.dataKey;
@@ -39,8 +39,7 @@ export class RegisterComponent implements OnInit {
           this.ToastrService.success(data.mensaje,'Satisfactorio');
           
           }, error => {
-          // this.mostrar = false;
-            this.ToastrService.error(error.error.mensaje,'Error: ');
+              this.ToastrService.error(error.error.mensaje,'Error: ');
 
           });
 

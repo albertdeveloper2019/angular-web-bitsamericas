@@ -1,15 +1,14 @@
-<!-- <div class="container">
-    <button type="submit" class="btn btn-primary" (click)="spotifyToken()">
-         Get Token
-    </button>
-</div> -->
+<app-navbar></app-navbar>
+
+<div class="container" style="padding-left: 58px;
+                              padding-right: 58px;
+                              margin-top: 10px;">
+     <div>
+        <input #termino type="text" (keyup)="buscar(termino.value)" class="form-control" placeholder="Search...">
+    </div>
+</div>
 
 <div class="container">
-
     <app-carsd [items]="nuevasCanciones"></app-carsd>
 
 </div>
-
-<!-- <div>
-    <app-footer></app-footer>
-</div> -->

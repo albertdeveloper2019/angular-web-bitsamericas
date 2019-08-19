@@ -46,19 +46,26 @@ export class DashboardComponent implements OnInit {
   cargarNewReleases(){
       this.SpotifyService.getNewReleases()
       .subscribe( (data: any) => {
-        console.log("response: ",data);
+        console.log("response spotify: ",data);
         this.nuevasCanciones = data;
-       // this.loading = false;
+     
       }, ( errorServicio ) => {
 
-       // this.loading = false;
-       // this.error = true;
         console.log(errorServicio);
-      //  this.mensajeError = errorServicio.error.error.message;
-
+    
       });
 
-      }// cargarNewReleases
+  }// cargarNewReleases
 
+  buscar(termino: string) {
+    console.log(termino);
+
+    this.SpotifyService.getArtistas( termino )
+          .subscribe( (data: any) => {
+            console.log(data);
+            this.nuevasCanciones = data;
+      
+          });
+  }// buscar
 
 }// DashboardComponent
