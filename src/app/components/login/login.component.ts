@@ -28,10 +28,6 @@ export class LoginComponent implements OnInit {
         console.log("postdata: ", this.postData);
         this.servicesUser.Autentication(this.postData).subscribe(
           (data: any) => {
-           // this.storage.set('token', data.token);
-          //  this.storage.set('rol', data.usuario.rol);
-          //  this.storage.set('nombre', data.usuario.nombre);
-           // this.storage.set('idUser', data.usuario._id);
 
             console.log(data);
 
@@ -50,7 +46,7 @@ export class LoginComponent implements OnInit {
             this.ToastrService.error(error.error.mensaje,'Error: ');
           }
         );
-   
+        
   }// Loging
 
   canceling(){

@@ -12,6 +12,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ToastrModule } from 'ngx-toastr';
+import { CarsdComponent } from './components/carsd/carsd.component';
+import { ManageImagePipe } from './pipes/manage-image.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ToastrModule } from 'ngx-toastr';
     LoginComponent,
     RegisterComponent,
     ErrorPageComponent,
-    DashboardComponent
+    DashboardComponent,
+    CarsdComponent,
+    ManageImagePipe
     
   ],
   imports: [

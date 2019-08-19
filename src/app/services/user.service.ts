@@ -23,5 +23,4 @@ export class UserService {
     return this.http.post(this.url + '/usuario', postData, this.HttpOptions);
   }
 
-
 }
